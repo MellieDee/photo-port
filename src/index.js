@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//The ReactDOM library is rendering the App component at the root element in the HTML. You can find the HTML by navigating to the public folder.
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
