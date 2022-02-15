@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import About from "..";
 
-const { asFragment } = render(<About />);
+
 
 //configure testing environment by adding a utility function to keep things clean
 afterEach(cleanup);
@@ -19,7 +19,9 @@ describe('About component', () => {
   });
 
   //2nd test - Test Case:
+
   it('matches snapshot DOM node structure', () => {
+    const { asFragment } = render(<About />);
     // render About
 
     expect(asFragment()).toMatchSnapshot();
