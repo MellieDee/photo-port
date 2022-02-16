@@ -5,6 +5,8 @@ import Nav from './components/Nav';
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
+
+
 function App() {
   const [categories] = useState([
     {
@@ -16,18 +18,29 @@ function App() {
     { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
   ]);
 
+  const [contactSelected, setContactSelected] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
     <div className="App">
+      {/* props passed into Nav: */}
       <Nav
         categories={categories}
         setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}></Nav>
+        currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
+      //Passing getter and setter functions into the Nav component allows Nav component to modify the state in the App component, which will conditionally render based on the user's selection.
+      ></Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Gallery currentCategory={currentCategory}></Gallery>
-        <About></About>
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
