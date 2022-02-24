@@ -4,7 +4,7 @@ import React from 'react';
 // then assigned its properties in the modal: destructuring Props into 'currentPhoto' ===> lets us use Var
 
 
-function Modal({ currentPhoto }) {
+function Modal({ onClose, currentPhoto }) {
   const { name, category, description, index } = currentPhoto
 
   return (
@@ -15,7 +15,7 @@ function Modal({ currentPhoto }) {
         <p>
           {description}
         </p>
-        <button type="button">
+        <button onClick={onClose} type="button">
           Close this modal
         </button>
       </div>
