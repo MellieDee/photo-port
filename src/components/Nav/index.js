@@ -12,7 +12,7 @@ function Nav(props) {
     setContactSelected
   } = props;
 
-  // Assign DOM node in function body of CB funciton
+  // Assign DOM node in function body of CB function
   // 1st Arg = document.title = capitalizeFirstLetter(currentCategory.name)
   // 2nd Arg = [] aka [currentCategory]
 
